@@ -9,11 +9,17 @@
 #include "./Queue/queue.h"
 #include "./Stack/stack.h"
 #include "./Deque/deque.h"
+#include "./LinkedList/linked.h"
+#include "./HashMap/hash.h"
+#include "./Heap/heap.h"
 
 enum DATA_STRUCTURES {
 	STACK,
 	QUEUE,
 	DEQUE,
+	LINKED_LIST,
+	HASH_MAP,
+	HEAP,
 };
 
 int main () {
@@ -31,6 +37,15 @@ int main () {
 			break;
 		case DEQUE:
 			dequeTask();
+			break;
+		case LINKED_LIST:
+			linkedTask();
+			break;
+		case HASH_MAP:
+			hashTask();
+			break;
+		case HEAP:
+			heapTask();
 			break;
 		default:
 			printf("None selected, bye..\n");
