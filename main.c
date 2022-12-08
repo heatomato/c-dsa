@@ -12,15 +12,23 @@
 #include "./LinkedList/linked.h"
 #include "./HashMap/hash.h"
 #include "./Heap/heap.h"
+#include "./Tree/tree.h"
+#include "./Graph/graph.h"
+#include "./Strings/ustring.h"
 
 enum DATA_STRUCTURES {
 	STACK,
-	QUEUE,
+	QUEUE_TASK,
 	DEQUE,
 	LINKED_LIST,
 	HASH_MAP,
 	HEAP,
+	STRING,
+	TREE,
+	GRAPH
 };
+
+
 
 int main () {
 
@@ -32,7 +40,7 @@ int main () {
 		case STACK:
 			stackTask();
 			break;
-		case QUEUE:
+		case QUEUE_TASK:
 			queueTask();
 			break;
 		case DEQUE:
@@ -47,6 +55,16 @@ int main () {
 		case HEAP:
 			heapTask();
 			break;
+		case STRING:
+			stringTask();
+			break;
+		case TREE:
+			treeTask();
+			break;
+		case GRAPH:
+			graphTask();
+			break;
+
 		default:
 			printf("None selected, bye..\n");
 			break;

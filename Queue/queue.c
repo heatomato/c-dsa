@@ -14,13 +14,13 @@ QUEUE *qp = &queue;
 
 
 // Create Queue
-static void createQueue(QUEUE *qp) {
+void createQueue(QUEUE *qp) {
 	qp->front = -1;
 	qp->rear = -1;
 }
 
 // Check for full
-static int isFull(QUEUE *qp) {
+int isFull(QUEUE *qp) {
 	if ((qp->front == qp->rear + 1) || (qp->front == 0 && qp->rear == SIZE - 1)) {
 		printf("Queue is full\n");
 		return 1;
@@ -30,7 +30,7 @@ static int isFull(QUEUE *qp) {
 }
 
 // Check for emtpy
-static int isEmpty(QUEUE *qp) {
+int isEmpty(QUEUE *qp) {
 	if (qp->front == -1 )
 		return 1;
 	else
@@ -53,11 +53,12 @@ void enqueue(QUEUE *qp, int element) {
 }
 
 // Dequeue
-void dequeue(QUEUE *qp) {
+int dequeue(QUEUE *qp) {
 	if (isEmpty(qp)) {
 		printf("Queue Empty\n");
 	} else {
 		printf("Dequeued: %i\n", qp->items[qp->front]);
+		int element = qp->items[qp->front];
 		// In case that this was the last element
 		if (qp->front == qp->rear) {
 			// Reset the queue
@@ -66,7 +67,7 @@ void dequeue(QUEUE *qp) {
 		} else {
 			qp->front = (qp->front + 1) % SIZE;
 		}
-
+		return element;
 	}
 }
 

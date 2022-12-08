@@ -4,15 +4,15 @@
 #define STACK_SIZE 20
 
 typedef struct {
-	int items[STACK_SIZE];
+	int *items;
 	int top;
 }STACK;
 
-STACK stack;
-STACK *sp = &stack;
+STACK *sp = NULL;
 
 // Creation
 void createEmptyStack(STACK *sp) {
+	sp->items = calloc(20, sizeof(int));
 	sp->top = -1;
 }
 

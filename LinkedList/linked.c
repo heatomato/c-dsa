@@ -59,7 +59,7 @@ void insertAtRear( int element) {
 
 }
 
-void deleteNode(int element) {
+static void deleteNode(int element) {
 
 	for (NODE  *tmpNode = list; tmpNode != NULL; tmpNode = tmpNode->next) {
 

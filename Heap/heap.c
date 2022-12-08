@@ -45,7 +45,7 @@ void heapify(int *array, int size, int place) {
 	}
 }
 
-void insert(int *array, int value) {
+static void insert(int *array, int value) {
 	if (size == 0) {
 		// First Node Inserted
 		array[0] = value;
