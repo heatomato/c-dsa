@@ -25,7 +25,8 @@ enum DATA_STRUCTURES {
 	HEAP,
 	STRING,
 	TREE,
-	GRAPH
+	GRAPH,
+	SORTING
 };
 
 
@@ -63,6 +64,9 @@ int main () {
 			break;
 		case GRAPH:
 			graphTask();
+			break;
+		case SORTING:
+			sortTask();
 			break;
 
 		default:

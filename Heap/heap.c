@@ -13,13 +13,13 @@
 int heapArray[HEAP_SIZE];
 int size = 0;
 
-void swap(int *nodeA, int *nodeB) {
+static void swap(int *nodeA, int *nodeB) {
 	int temp = *nodeB;
 	*nodeB = *nodeA;
 	*nodeA = temp;
 }
 
-void heapify(int *array, int size, int place) {
+static void heapify(int *array, int size, int place) {
 	if (size == 1) {
 		printf("Single element in the heap\n");
 	} else {
@@ -62,7 +62,7 @@ static void insert(int *array, int value) {
 	}
 }
 
-void printNode(int *array, int node) {
+static void printNode(int *array, int node) {
 
 	int left = 2 * node + 1;
 	int rigth = 2 * node + 2;
@@ -73,7 +73,7 @@ void printNode(int *array, int node) {
 
 }
 
-void printHeap(int *array, int size) {
+static void printHeap(int *array, int size) {
 	for (int i= 0; i < size; i++) {
 		printf("%d ", array[i]);
 
@@ -95,10 +95,13 @@ void heapTask() {
 	insert(heapArray, 4);
 	insert(heapArray, 5);
 
+
+
 	printHeap(heapArray, 6);
 
 	printNode(heapArray, 0);
 
+	printHeap(heapArray, 6);
 
 
 }
