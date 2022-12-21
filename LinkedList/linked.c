@@ -99,7 +99,7 @@ static void deleteNode(int element) {
 	}
 }
 
-
+/*
 static void reverseList() {
 
 	NODE *new = NULL;
@@ -121,14 +121,14 @@ reverseListRecursive() {
 
 	}
 }
-
+*/
 void reversePrint() {
 	// Base case
-	if (list = NULL)
+	if (list == NULL)
 		return;
 
-	ReversePrint(list->next);
-	printf("%i->", list->data);
+	//ReversePrint(list->next);
+	printf("%i->", list->value);
 }
 
 void printList() {
