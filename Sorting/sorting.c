@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 void printArray(int array[], int size) {
 	printf("[");
@@ -179,6 +180,45 @@ void quickSort(int array[], int low, int high) {
 	}
 }
 
+int partition2(int *array, int left, int right) {
+    // Select the pivot as the mean
+    int pivot = floor((right + left )/2);
+    printf("pivot:%i\n", pivot);
+
+    int l = left-1;
+    int r = right+1;
+
+    while(l < r) {
+        do {
+            l++;
+        }while (array[l] < pivot);
+
+        do {
+            r--;
+        }while (array[r] > pivot);
+
+        // Swap the elements at hte left and right indices
+        int temp = array[r];
+        array[r] = array[l];
+        array[l] = temp;
+    }
+
+    return r;
+
+}
+
+void quickSort2(int *array, int left, int right) {
+    if (left < right) {
+
+     int pivot = partition2(array, left, right);
+
+     // Repeat the quicksort to both sides of pivot
+     quickSort2(array, left, pivot);
+     quickSort2(array, pivot + 1, right);
+    }
+}
+
+
 void countingSort(int array[], int size) {
 	int output[10];
 
@@ -273,7 +313,7 @@ void heapSort(int array[], int size) {
 
 void sortTask() {
 
-	//int input[] = {-2, 45, 0, 11, -9};
+	int input[] = {-2, 45, 0, 11, -9};
 
 	//bubbleSort(input, 5);
 
@@ -283,7 +323,8 @@ void sortTask() {
 
 	//mergeSort(input,  0, 4);
 
-	//quickSort(input, 0, 4);
+	quickSort2(input, 0, 5);
+	printArray(input, 5);
 
 	//printArray(input, 5);
 
@@ -293,12 +334,12 @@ void sortTask() {
 
 	//printArray(array, 7);
 
-	int array[] = {1, 12, 9, 5, 6, 10};
-	printArray(array, 6);
+	//int array[] = {1, 12, 9, 5, 6, 10};
+	//printArray(array, 6);
 
 
-	heapSort(array, 6);
-	printArray(array, 6);
+	//heapSort(array, 6);
+	//printArray(array, 6);
 
 
 

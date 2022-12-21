@@ -15,6 +15,9 @@
 #include "./Tree/tree.h"
 #include "./Graph/graph.h"
 #include "./Strings/ustring.h"
+#include "./Sorting/sorting.h"
+#include "./Search/search.h"
+
 
 enum DATA_STRUCTURES {
 	STACK,
@@ -26,7 +29,8 @@ enum DATA_STRUCTURES {
 	STRING,
 	TREE,
 	GRAPH,
-	SORTING
+	SORTING,
+	SEARCHING
 };
 
 
@@ -67,6 +71,9 @@ int main () {
 			break;
 		case SORTING:
 			sortTask();
+			break;
+		case SEARCHING:
+			searchTask();
 			break;
 
 		default:
